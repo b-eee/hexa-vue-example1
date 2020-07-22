@@ -8,7 +8,7 @@
 
 ### ソースコードの取得
 ```
-git clone
+git clone git@github.com:b-eee/hexa-vue-example1.git
 ```
 
 ### 実行に必要なパッケージの取得
