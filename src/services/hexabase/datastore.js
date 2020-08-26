@@ -57,6 +57,7 @@ const executeAction = async (
 ) => {
   const params = {
     rev_no: Number(revNo),
+    use_display_id: true,
   };
   await axios.post(
     `/linker-api/applications/${applicationId}/datastores/${datastoreId}/items/action/${itemId}/${actionId}`,

@@ -59,7 +59,7 @@
                     >
                       <template v-slot:activator="{ on, attrs }">
                         <v-text-field
-                          v-model="deadlineFormatted"
+                          v-model="duedateFormatted"
                           label="期限"
                           readonly
                           v-bind="attrs"
@@ -67,7 +67,7 @@
                         ></v-text-field>
                       </template>
                       <v-date-picker
-                        v-model="deadline"
+                        v-model="duedate"
                         no-title
                         @input="datepickerMenu = false"
                       />
@@ -112,10 +112,10 @@
         </v-list>
       </v-menu>
     </template>
-    <template v-slot:[`item.${fields.DEADLINE}`]="{ item }">
-      {{ getDeadline(item) }}
+    <template v-slot:[`item.${fields.DUEDATE}`]="{ item }">
+      {{ getDuedate(item) }}
     </template>
-    <template v-slot:item.actions="{ item }">
+    <template v-slot:[`item.actions`]="{ item }">
       <v-icon small class="mr-2" @click="editItem(item)">
         mdi-pencil
       </v-icon>
@@ -153,7 +153,7 @@ export default {
         { text: "担当", value: FIELDS.ASSIGNEES },
         { text: "カテゴリ", value: FIELDS.CATEGORY },
         { text: "ステータス", value: FIELDS.STATUS },
-        { text: "期限", value: FIELDS.DEADLINE },
+        { text: "期限", value: FIELDS.DUEDATE },
         { text: "操作", value: "actions", sortable: false },
       ],
       applicationId: process.env.VUE_APP_APPLICATION_ID,
@@ -166,7 +166,7 @@ export default {
       datepickerMenu: false,
       editedIndex: -1,
       editedItem: {},
-      deadline: "",
+      duedate: "", // format:xx-xx-xx
     };
   },
   computed: {
@@ -176,9 +176,9 @@ export default {
     saveButtonTitle() {
       return this.editedIndex === -1 ? "追加" : "更新";
     },
-    deadlineFormatted() {
+    duedateFormatted() {
       return this.convertDateSeparator(
-        this.deadline,
+        this.duedate,
         SEPARATOR.HYPHEN,
         SEPARATOR.SLASH
       );
@@ -224,17 +224,6 @@ export default {
         this.$set(this.editedItem, FIELDS.CATEGORY, val.value);
       },
     },
-    editedDeadline: {
-      get() {
-        if (!this.editedItem[FIELDS.DEADLINE]) {
-          return "";
-        }
-        return this.editedItem[FIELDS.DEADLINE];
-      },
-      set(val) {
-        this.$set(this.editedItem, FIELDS.DEADLINE, val);
-      },
-    },
   },
   watch: {
     dialog(val) {
@@ -260,15 +249,19 @@ export default {
       const [year, month, day] = date.split(from);
       return `${year}${to}${month}${to}${day}`;
     },
-    getDeadline(item) {
-      if (!item[FIELDS.DEADLINE]) {
+    convertDateToLocalString(date, separator) {
+      const year = date.getFullYear();
+      const month = ("0" + (date.getMonth() + 1)).slice(-2);
+      const day = ("0" + date.getDate()).slice(-2);
+      return `${year}${separator}${month}${separator}${day}`;
+    },
+    getDuedate(item) {
+      if (!item[FIELDS.DUEDATE]) {
         return "";
       }
 
-      const deadline = item[FIELDS.DEADLINE];
-      return this.convertDateSeparator(
-        deadline.substr(0, 10),
-        SEPARATOR.HYPHEN,
+      return this.convertDateToLocalString(
+        new Date(item[FIELDS.DUEDATE]),
         SEPARATOR.SLASH
       );
     },
@@ -301,7 +294,7 @@ export default {
     resetEditedItem() {
       this.editedIndex = -1;
       this.editedItem = Object.assign({}, this.defaultItem);
-      this.deadline = "";
+      this.duedate = "";
     },
     async getItems() {
       const page = 1;
@@ -327,14 +320,15 @@ export default {
       editedItem[FIELDS.TITLE] = itemDetails[FIELDS.TITLE].value;
       editedItem[FIELDS.ASSIGNEES] = itemDetails[FIELDS.ASSIGNEES].value;
       editedItem[FIELDS.CATEGORY] = itemDetails[FIELDS.CATEGORY].value;
-      editedItem[FIELDS.DEADLINE] = itemDetails[FIELDS.DEADLINE].value;
+      editedItem[FIELDS.DUEDATE] = itemDetails[FIELDS.DUEDATE].value;
 
       this.editedIndex = this.items.indexOf(item);
       this.editedItem = editedItem;
-      if (editedItem[FIELDS.DEADLINE]) {
-        this.deadline = new Date(editedItem[FIELDS.DEADLINE])
-          .toISOString()
-          .substr(0, 10);
+      if (editedItem[FIELDS.DUEDATE]) {
+        this.duedate = this.convertDateToLocalString(
+          new Date(editedItem[FIELDS.DUEDATE]),
+          SEPARATOR.HYPHEN
+        );
       }
       this.dialog = true;
     },
@@ -394,10 +388,12 @@ export default {
     },
     buildEditedItem() {
       const item = {};
-      if (this.deadline) {
-        const deadline =
-          new Date(this.deadline).toISOString().split(".")[0] + "Z";
-        item[FIELDS.DEADLINE] = deadline;
+      if (this.duedate) {
+        const duedate =
+          new Date(this.duedate + "T00:00:00+0900")
+            .toISOString()
+            .split(".")[0] + "Z";
+        item[FIELDS.DUEDATE] = duedate;
       }
       item[FIELDS.TITLE] = this.editedItem[FIELDS.TITLE];
       item[FIELDS.ASSIGNEES] = this.editedItem[FIELDS.ASSIGNEES];
