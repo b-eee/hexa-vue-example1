@@ -28,16 +28,16 @@ npm install
 |---|---|---|
 | VUE_APP_HEXACLOUD_URL | hexabase APIのURL | 修正の必要はありません
 | VUE_APP_HEXACLOUD_PATH | hexabase APIのURL以降の固定パス | 修正の必要はありません
-| VUE_APP_APPLICATION_ID | hexabase アプリケーションのID | 実行環境にあわせて修正
-| VUE_APP_DATASTORE_ID | hexabase データベースのID | 実行環境にあわせて修正
+| VUE_APP_APPLICATION_ID | hexabase アプリケーションのID | 修正の必要はありませんが、Hexabaseの設定に応じて変更できます
+| VUE_APP_DATASTORE_ID | hexabase データベースのID | 修正の必要はありませんが、Hexabaseの設定に応じて変更できます
 
-#### datastore.js
+#### src/constants/datastore.js
 | 値 | 意味 | 説明 |
 |---|---|---|
-| DATASTORE_TITLE | サンプルアプリケーションで表示するデータベースのタイトル | 必要に応じて修正
-| FIELDS | データベースの画面項目ID | 必要に応じて修正
-| OPTIONS.CATEGORY | 選択肢の値とID | 必要に応じて修正
-| STATUS_ACTIONS | ステータスとステータスアクションのIDと名前 | 必要に応じて修正
+| DATASTORE_TITLE | サンプルアプリケーションで表示するデータベースのタイトル | 修正の必要はありませんが、Hexabaseの設定に応じて変更できます
+| FIELDS | データベースの画面項目ID | 修正の必要はありませんが、Hexabaseの設定に応じて変更できます
+| OPTIONS.CATEGORY | 選択肢の値とID | 修正の必要はありませんが、Hexabaseの設定に応じて変更できます
+| STATUS_ACTIONS | ステータスとステータスアクションのIDと名前 | 修正の必要はありませんが、Hexabaseの設定に応じて変更できます
 
 
 ### アプリケーションの実行
