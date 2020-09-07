@@ -21,6 +21,12 @@ npm install
 npm run serve
 ```
 
+
+## 詳細情報
+
+さらに詳しい実行方法は、「 get_start.md 」を参照してください。
+
+
 ## License
 
 MIT License.

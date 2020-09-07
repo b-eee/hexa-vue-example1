@@ -19,7 +19,7 @@ Hexabase のサンプルアプリケーションを準備して、フロント�
 - node.js
 - npm
 
-- バックエンドの設定方法について、スタートガイド(https://docs.hexabase.com/starter_guide/ja)で、基本操作を把握してください。
+- バックエンドの設定方法について、スタートガイド( https://docs.hexabase.com/starter_guide/ja )で、基本操作を把握してください。
 
 
 ### バックエンド側の準備
@@ -76,7 +76,7 @@ npm run serve
 
 ## 設定ファイルについて
 
-アプリケーションの動作に必要な設定を、実行環境にあわせて修正してください。
+アプリケーションの動作に必要な設定を、バックエンドの実行環境にあわせて修正してください。
 
 設定ファイルは、以下の通りです。
 
@@ -102,7 +102,7 @@ npm run serve
 
 ### 設定値について
 
-- hexabase APIのURL：実行環境の「https://xx.hexabase.com」に対して「https://xx-api.hexabase.com」となります
+- hexabase APIのURL：バックエンド実行環境の「 https://xx.hexabase.com 」に対して「 https://xx-api.hexabase.com 」となります
 
 - アプリケーションID：application_idのdisplay_idに対応します。
 - データベースID：datastore_idのdisplay_idに対応する。
