@@ -11,7 +11,7 @@ https://github.com/b-eee/hexa-vue-example1
 
 ## 手順
 
-Hexabase のサンプルアプリケーションを準備して、フロントエンドからアクセスする手順です。
+Hexabaseのサンプルアプリケーションを準備して、フロントエンドからアクセスする手順です。
 
 
 ### あらかじめ用意するもの
@@ -29,15 +29,15 @@ Hexabase のサンプルアプリケーションを準備して、フロント�
 
    これで、Hexabaseの新しいワークスペースにアクセスできます。
 
-2. 画面右上にある＋ボタンから「新しいアプリケーションの作成」ポップアップを開く
+2. 画面右上にある「＋」ボタンで「新しいアプリケーションの作成」ポップアップを開く
 
 3. アプリケーション名(英語、日本語)を入力する（例：simple-example1）
 4. Examplesテンプレートから「hexa-simple-example1」を選択する
 5. 「作成」ボタンを押下する
 
-6. しばらくするとアプリケーションが作成され、 「新しいアプリケーション」の横に「simple-example1」（指定したアプリケーション名）が表示される。
+6. しばらくするとアプリケーションが作成されて、「新しいアプリケーション」の横に、指定したアプリケーション名（例：simple-example1）が表示される。
 
-（もしも表示されない場合は、左上のワークスペース選択から再度ワークスペースを選択しなおしてください）
+もしも表示されない場合は、左上のワークスペース選択から再度ワークスペースを選択し直してください。
 
 7. 「TODOサンプルデータベース」を含む「simple-example1」アプリケーションが作成されたことを確認する。
 
@@ -87,10 +87,10 @@ npm run serve
 ### .env
 | 値 | 意味 | 説明 |
 |---|---|---|
-| VUE_APP_HEXACLOUD_URL | hexabase APIのURL | 
+| VUE_APP_HEXACLOUD_URL | hexabase APIのURL | hexabase APIのURL：バックエンド実行環境の「 https://xxx.hexabase.com 」に対して「 https://xxx-api.hexabase.com 」となります| 
 | VUE_APP_HEXACLOUD_PATH | hexabase APIのURL以降の固定パス |
-| VUE_APP_APPLICATION_ID | hexabase アプリケーションのID | ワークスペースに複数のアプリケーションがある場合に設定します
-| VUE_APP_DATASTORE_ID | hexabase データベースのID | アプリケーションに複数のデータベースがある場合に設定します
+| VUE_APP_APPLICATION_ID | hexabase アプリケーションのID | ワークスペースに複数のアプリケーションがある場合に設定します。application_idのdisplay_idを指定します |
+| VUE_APP_DATASTORE_ID | hexabase データベースのID | アプリケーションに複数のデータベースがある場合に設定します。datastore_idのdisplay_idを指定します|
 
 ### src/constants/datastore.js
 | 値 | 意味 | 説明 |
@@ -101,9 +101,4 @@ npm run serve
 | STATUS_ACTIONS | ステータスとステータスアクションのIDと名前 | Hexabaseの設定に応じて変更できます
 
 
-### 設定値について
 
-- hexabase APIのURL：バックエンド実行環境の「 https://xx.hexabase.com 」に対して「 https://xx-api.hexabase.com 」となります
-
-- アプリケーションID：application_idのdisplay_idに対応します。
-- データベースID：datastore_idのdisplay_idに対応する。
