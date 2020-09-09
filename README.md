@@ -6,6 +6,7 @@
 ## セットアップ
 本アプリケーションを実行するには、以下の手順を実行してください。
 
+
 ### ソースコードの取得
 ```
 git clone git@github.com:b-eee/hexa-vue-example1.git
@@ -24,7 +25,14 @@ npm run serve
 
 ## 詳細情報
 
-さらに詳しい実行方法は、[Vueサンプルの実行手順](https://github.com/b-eee/hexa-vue-example1)を参照してください。
+さらに詳しい実行方法は、[Vueサンプルの実行手順](https://github.com/b-eee/hexa-vue-example1/blob/develop/get_start.md)を参照してください。
+
+
+## License
+
+MIT License.
+
+Please see LICENSE file
 
 
 ## 関連情報
@@ -36,9 +44,5 @@ npm run serve
 - [お問い合わせ](https://www.hexabase.com/contact-us/)
 
 
-## License
 
-MIT License.
-
-Please see LICENSE file
 
