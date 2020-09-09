@@ -24,7 +24,16 @@ npm run serve
 
 ## 詳細情報
 
-さらに詳しい実行方法は、「 get_start.md 」を参照してください。
+さらに詳しい実行方法は、[Vueサンプルの実行手順](https://github.com/b-eee/hexa-vue-example1)を参照してください。
+
+
+## 関連情報
+
+- [Hexabase Development Guide](https://docs.hexabase.com/)
+- [Hexabase API Document](https://beee-devops.gitbook.io/hexabase-api/api-document_jp)
+- [フロントエンドアプリケーションのデプロイ手順](https://docs.hexabase.com/deploy/partner_auto_deploy.ja)
+- [株式会社Hexabase](https://www.hexabase.com/)
+- [お問い合わせ](https://www.hexabase.com/contact-us/)
 
 
 ## License
