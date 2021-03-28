@@ -37,9 +37,9 @@ Please see LICENSE file
 
 ## 関連情報
 
-- [Hexabase Development Guide](https://docs.hexabase.com/)
-- [Hexabase API Document](https://beee-devops.gitbook.io/hexabase-api/api-document_jp)
-- [フロントエンドアプリケーションのデプロイ手順](https://docs.hexabase.com/deploy/partner_auto_deploy.ja)
+- [TODOサンプル](https://b-eee.github.io/development_guide/docs/example/todo_simple)
+- [Hexabase 開発ガイド](https://b-eee.github.io/development_guide/)
+- [Hexabase API Document](https://b-eee.github.io/linker-api-doc/)
 - [株式会社Hexabase](https://www.hexabase.com/)
 - [お問い合わせ](https://www.hexabase.com/contact-us/)
 

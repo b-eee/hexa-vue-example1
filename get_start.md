@@ -10,12 +10,12 @@ https://github.com/b-eee/hexa-vue-example1
 
 Hexabase のサンプルアプリケーションを準備して、フロントエンドからアクセスする手順です。
 
-### あらかじめ用意するもの
+### 必要なツール
 
 - node.js
 - npm
 
-### バックエンド側の準備
+### バックエンドを準備する
 
 1. システム管理者から、Hexabase への招待メールを受け取る。
    メールから、ユーザー登録画面にアクセスして、ユーザー名とパスワードを登録する
@@ -34,7 +34,7 @@ Hexabase のサンプルアプリケーションを準備して、フロント�
 
 7. 「TODO サンプルデータベース」を含む「simple-example1」アプリケーションが作成されたことを確認する。
 
-### Vue サンプルの準備
+### Vue サンプルを準備する
 
 1. Github からサンプルコードを取得する
 
@@ -48,7 +48,7 @@ git clone git@github.com:b-eee/hexa-vue-example1.git
 npm install
 ```
 
-### アプリケーションの実行
+### アプリケーションを実行する
 
 ```
 npm run serve
@@ -64,7 +64,7 @@ npm run serve
 
 ## バックエンドの設定方法
 
-- バックエンドの設定方法について、[スタートガイド](https://docs.hexabase.com/starter_guide/ja)で、基本操作を把握してください。
+- バックエンドの設定方法について、[開発ガイド](https://b-eee.github.io/development_guide/)で、基本操作を把握してください。
 
 ## 設定ファイルについて
 
