@@ -7,7 +7,7 @@
       <v-card-text class="pt-5" v-show="!!message">{{ message }}</v-card-text>
       <v-card-actions class="pt-0">
         <v-spacer></v-spacer>
-        <v-btn @click.native="agree">
+        <v-btn color="accent" @click.native="agree">
           はい
         </v-btn>
         <v-btn @click.native="cancel">
