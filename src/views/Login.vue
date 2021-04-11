@@ -1,23 +1,20 @@
 <template>
-  <v-container class="pt-12">
+  <v-container fluid>
     <v-row justify="center">
-      <v-col lg="4" md="4" sm="4" xs="4">
+      <v-col lg="3" md="3" sm="3" xs="3">
         <v-img
+          contain
           src="~@/assets/img/logo.png"
-          min-width="290"
+          min-width="180"
           alt="hexabase vue example1"
         />
-      </v-col>
-    </v-row>
-    <v-row justify="center">
-      <v-col lg="2" md="2" sm="2" xs="2" class="text-h6 font-weight-bold">
-        ログイン
       </v-col>
     </v-row>
     <v-row>
       <v-col>
         <ValidationObserver v-slot="{ invalid }">
-          <v-card class="elevation-12">
+          <v-card class="mx-auto elevation-12" max-width="354">
+            <v-card-title>ログイン</v-card-title>
             <v-card-text>
               <v-form>
                 <div>
@@ -47,7 +44,7 @@
               </template>
             </v-card-text>
             <v-card-actions>
-              <v-btn class="button-main" @click="login" :disabled="invalid">
+              <v-btn class="button-main" color="accent" @click="login" :disabled="invalid">
                 ログイン
               </v-btn>
             </v-card-actions>
