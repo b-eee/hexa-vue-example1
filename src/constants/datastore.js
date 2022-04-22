@@ -50,7 +50,7 @@ export const STATUS_ACTIONS = {
   // prettier-ignore
   "作業中": [
     {
-      id: "MoveToAssigned",
+      id: "BackToAssigned",
       name: "受付へ戻す",
       icon: "mdi-arrow-left-box",
     },
