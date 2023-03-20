@@ -5,16 +5,16 @@ const login = async (email, password) => {
     email: email,
     password: password,
   };
-  const result = await axios.post("/linker-api/login", params);
+  const result = await axios.post(`${process.env.VUE_APP_HEXABAESE_API_URL}/login`, params);
   return result.data.token;
 };
 
 const logout = async () => {
-  await axios.post("/linker-api/users/logout");
+  await axios.post(`${process.env.VUE_APP_HEXABAESE_API_URL}/users/logout`);
 };
 
 const getUserInfo = async () => {
-  const result = await axios.get("/linker-api/userinfo");
+  const result = await axios.get(`${process.env.VUE_APP_HEXABAESE_API_URL}/userinfo`);
   return result.data;
 };
 

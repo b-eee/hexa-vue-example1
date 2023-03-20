@@ -79,8 +79,7 @@ npm run serve
 
 | 値                     | 意味                               | 説明                                                                                                                          |
 | ---------------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| VUE_APP_HEXACLOUD_URL  | hexabase API の URL                | 本番： https://api.hexabase.com/  <br>検証：https://az-api.hexabase.com/ |
-| VUE_APP_HEXACLOUD_PATH | hexabase API の URL 以降の固定パス |
+| VUE_APP_HEXABAESE_API_URL  | hexabase API の URL                | 本番： https://api.hexabase.com/  <br>検証：https://az-api.hexabase.com/ |
 | VUE_APP_APPLICATION_ID | hexabase アプリケーションの ID     | ワークスペースに複数のアプリケーションがある場合に設定します。application_id の display_id を指定します                       |
 | VUE_APP_DATASTORE_ID   | hexabase データベースの ID         | アプリケーションに複数のデータベースがある場合に設定します。datastore_id の display_id を指定します                           |
 
